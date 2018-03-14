@@ -8,5 +8,6 @@ function TriangleType(sideA, sideB, sideC ){
     }  else if (sideA === sideB && sideA != sideC) {
         console.log("Triangle is Isosceles");
         return "Triangle is Isosceles";
-    }  
+    };
 }
+
