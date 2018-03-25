@@ -1,4 +1,7 @@
 describe("Answer", function () {
+    it("Should return Triangle is Impossible when Triangle is impossible", function () {
+        expect(TriangleType(12, 13, 163)).toBe("Triangle is impossible");
+    });
     it("Should return Triangle is Equilateral when all sides are equal", function () {
         expect(TriangleType(1, 1, 1)).toBe("Triangle is Equilateral");
         expect(TriangleType(12, 12, 12)).toBe("Triangle is Equilateral");
@@ -11,7 +14,7 @@ describe("Answer", function () {
     });
     it("Should return Triangle is Scalene when no sides are equal", function () {
         expect(TriangleType(1, 2, 3)).toBe("Triangle is Scalene");
-        expect(TriangleType(14, 27, 63)).toBe("Triangle is Scalene");
+        expect(TriangleType(14, 27, 35)).toBe("Triangle is Scalene");
         expect(TriangleType(513, 242, 326)).toBe("Triangle is Scalene");
     });
     it("Should not return equilateral when all sides are not equal", function () {
@@ -28,8 +31,5 @@ describe("Answer", function () {
         expect(TriangleType(1, 1, 2)).not.toBe("Scalene");
         expect(TriangleType(15, 15, 26)).not.toBe("Scalene");
         expect(TriangleType(144, 144, 232)).not.toBe("Scalene");
-    });
-    it("Should return Triangle Cannot Exist when Triangle is Impossible!", function (){
-        //expect(TriangleType(12, 36, 326)).toBe("Triangle is impossible!")
     });
 })
