@@ -1,7 +1,7 @@
 function TriangleType(sideA, sideB, sideC ){
-    if (sideA + sideB < sideC || sideB + sideC < sideA || sideA + sideC < sideB) {
-        console.log("Triangle is not possible");
-        alert("Triangle is impossible");
+    if (sideA + sideB < sideC || sideA + sideC < sideB || sideB + sideC < sideA) {
+        console.log("Triangle is Impossible");
+        return "Triangle is impossible";
     } else if (sideA === sideB && sideA === sideC) {
         console.log("Triangle is Equilateral");
         return "Triangle is Equilateral";
@@ -11,6 +11,7 @@ function TriangleType(sideA, sideB, sideC ){
     }  else if (sideA === sideB && sideA != sideC) {
         console.log("Triangle is Isosceles");
         return "Triangle is Isosceles";
-    };
-}
+    };  
+    
+};
 

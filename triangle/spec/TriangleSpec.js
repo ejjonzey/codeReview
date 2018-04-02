@@ -1,6 +1,6 @@
 describe("Answer", function () {
-    it("Should return Triangle is Impossible when Triangle is impossible", function () {
-        expect(TriangleType(12, 13, 163)).toBe("Triangle is impossible");
+    it("Should alert Triangle is Impossible when Triangle is impossible", function () {
+        expect(TriangleType(12, 1, 163)).toBe("Triangle is impossible");
     });
     it("Should return Triangle is Equilateral when all sides are equal", function () {
         expect(TriangleType(1, 1, 1)).toBe("Triangle is Equilateral");
