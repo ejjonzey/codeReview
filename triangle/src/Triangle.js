@@ -1,17 +1,29 @@
 function TriangleType(sideA, sideB, sideC ){
-    if (sideA + sideB < sideC || sideA + sideC < sideB || sideB + sideC < sideA) {
-        console.log("Triangle is Impossible");
+if (impossibleTriangle(sideA, sideB, sideC)) {
         return "Triangle is impossible";
-    } else if (sideA === sideB && sideA === sideC) {
-        console.log("Triangle is Equilateral");
+} else if (equilateralTriangle(sideA, sideB, sideC)) {
         return "Triangle is Equilateral";
-    } else if (sideA != sideB && sideA != sideC && sideB != sideC) {
-        console.log("Triangle is Scalene");
+} else if (scaleneTriangle(sideA, sideB, sideC)) {
         return "Triangle is Scalene";
-    }  else if (sideA === sideB && sideA != sideC) {
-        console.log("Triangle is Isosceles");
+} else if (isoscelesTriangle(sideA, sideB, sideC)) {
         return "Triangle is Isosceles";
     };  
     
 };
+
+function isoscelesTriangle(sideA, sideB, sideC) {
+    return sideA === sideB && sideA != sideC;
+}
+
+function scaleneTriangle(sideA, sideB, sideC) {
+    return sideA != sideB && sideA != sideC && sideB != sideC;
+}
+
+function equilateralTriangle(sideA, sideB, sideC) {
+    return sideA === sideB && sideA === sideC;
+}
+
+function impossibleTriangle(sideA, sideB, sideC) {
+    return sideA + sideB < sideC || sideA + sideC < sideB || sideB + sideC < sideA;
+}
 
