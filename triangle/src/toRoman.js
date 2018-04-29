@@ -1,18 +1,33 @@
-function toRoman(num) {
-    // first create an empty string for the resulting answer
+// const arabicToRoman = {
+//     1: "I",
+//     4: "IV",
+//     5: "V",
+//     9: "IX",
+//     10: "X",
+//     40: "XL",
+//     50: "L",
+//     90: "XC",
+//     100: "C",
+//     400: "CD",
+//     500: "D",
+//     900: "CM",
+//     1000: "M"
+//     };
+
+// var toRoman = arabicToRoman.map(function() {
+
+// });
+function toRoman(num){
     let romanNumeral = '';
-    // create two arrays for roman numerals and decimal numbers
     const decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
     const roman = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
-    // loop over each element
-    for (var i = 0; i <= decimal.length; i++){
-    // find the number smaller than or equal to argument
-    while (num % decimal[i] < num) {
-    // add matching roman numeral to string
-        romanNumeral += roman[i];
-    //subtract decimal value
-        num -= decimal[i];
-    } 
+    for ( i = 0; i <= decimal.length; i++) {
+        while (num % decimal[i] < num) {
+            romanNumeral += roman[i];
+            num -= decimal[i];
+        } 
+    };
+    return romanNumeral;
 }
-return romanNumeral;
-}
+
+ 
