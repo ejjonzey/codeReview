@@ -1,57 +1,57 @@
 describe('Roman Numeral Converter', () => {
-    it("Should return I when 1 is input", function () {
+    it("Should convert the number 1 into Roman Numeral I", function () {
         expect(toRoman(1)).toEqual('I');
     });
 
-    it("Should return IV when 4 is input", function ()  {
+    it("Should convert the number 4 into Roman Numeral IV", function ()  {
         expect(toRoman(4)).toEqual('IV');
     });
 
-    it("Should return V when 5 is input", function () {
+    it("Should convert the number 5 into Roman Numeral V", function () {
         expect(toRoman(5)).toEqual('V');
     });
 
-    it("Should return IX when 9 is input", function () {
+    it("Should convert the number 9 into Roman Numeral IX", function () {
         expect(toRoman(9)).toEqual('IX');
     });
 
-    it("Should return X when 10 is input", function () {
+    it("Should convert the number 10 into Roman Numeral X", function () {
         expect(toRoman(10)).toEqual('X');
     });
 
-    it("Should return XL when 40 is input", function () {
+    it("Should convert the number 40 into Roman Numeral XL", function () {
         expect(toRoman(40)).toEqual('XL');
     });
 
-    it("Should return L when 50 is input", function () {
+    it("Should convert the number 50 into Roman Numeral L", function () {
         expect(toRoman(50)).toEqual('L');
     });
 
-    it("Should return XC when 90 is input", function () {
+    it("Should convert the number 90 into Roman Numeral XC", function () {
         expect(toRoman(90)).toEqual('XC');
     });
         
-    it("Should return C when 100 is input", function () {
+    it("Should convert the number 100 into Roman Numeral C", function () {
         expect(toRoman(100)).toEqual('C');
     });
 
-    it("Should return CD when 400 is input", function () {
+    it("Should convert the number 400 into Roman Numeral CD", function () {
         expect(toRoman(400)).toEqual('CD');
     });
        
-    it("Should return D when 500 is input", function () {
+    it("Should convert the number 500 into Roman Numeral D", function () {
          expect(toRoman(500)).toEqual('D');
     });
 
-    it("Should return CM when 900 is input", function () {
+    it("Should convert the number 900 into Roman Numeral CM", function () {
         expect(toRoman(900)).toEqual('CM');
     });
 
-    it("Should return M when 1000 is input", function () {
+    it("Should convert the number 1000 into Roman Numeral M", function () {
         expect(toRoman(1000)).toEqual('M');
     });
 
-    it("Should return MCCCLXXVII when 1377 is input", function () {
+    it("Should convert the number 1377 into Roman Numeral MCCCXXLVII", function () {
         expect(toRoman(1377)).toEqual('MCCCLXXVII');
 
     });
