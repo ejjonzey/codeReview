@@ -21,19 +21,10 @@ function toRoman(numberToConvert) {
       let initialRomanNumeral = '';
       while (convertToRomanNumeral(numberToConvert, decimalNumber)) {
         initialRomanNumeral += arabicToRoman[decimalNumber];
-        numberToConvert = romanNumeralRemainder(numberToConvert, decimalNumber);
+        numberToConvert -= decimalNumber;
       }
-      return finalRomanNumeral(romanNumeral, initialRomanNumeral);
+      return romanNumeral + initialRomanNumeral;
     }, '');
-}
-
-function finalRomanNumeral(romanNumeral, initialRomanNumeral) {
-  return romanNumeral + initialRomanNumeral;
-}
-
-function romanNumeralRemainder(numberToConvert, decimalNumber) {
-  numberToConvert -= decimalNumber;
-  return numberToConvert;
 }
 
 function convertToRomanNumeral(numberToConvert, decimalNumber) {
