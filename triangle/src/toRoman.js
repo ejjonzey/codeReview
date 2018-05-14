@@ -1,4 +1,4 @@
-function toRoman(num) {
+function toRoman(numberToConvert) {
   const arabicToRoman = {
     1000: 'M',
     900: 'CM',
@@ -19,9 +19,9 @@ function toRoman(num) {
     .reverse()
     .reduce((romanNumeral, decimalNumber) => {
       let initialRomanNumeral = '';
-      while (romanNumeralConverter(num, decimalNumber)) {
+      while (convertToRomanNumeral(numberToConvert, decimalNumber)) {
         initialRomanNumeral += arabicToRoman[decimalNumber];
-        num = romanNumeralRemainder(num, decimalNumber);
+        numberToConvert = romanNumeralRemainder(numberToConvert, decimalNumber);
       }
       return finalRomanNumeral(romanNumeral, initialRomanNumeral);
     }, '');
@@ -31,12 +31,12 @@ function finalRomanNumeral(romanNumeral, initialRomanNumeral) {
   return romanNumeral + initialRomanNumeral;
 }
 
-function romanNumeralRemainder(num, decimalNumber) {
-  num -= decimalNumber;
-  return num;
+function romanNumeralRemainder(numberToConvert, decimalNumber) {
+  numberToConvert -= decimalNumber;
+  return numberToConvert;
 }
 
-function romanNumeralConverter(num, decimalNumber) {
-  return num % decimalNumber < num;
+function convertToRomanNumeral(numberToConvert, decimalNumber) {
+  return numberToConvert % decimalNumber < numberToConvert;
 }
 
