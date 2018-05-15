@@ -3,7 +3,7 @@ describe('Roman Numeral Converter', () => {
         expect(toRoman(1)).toEqual('I');
     });
 
-    it("Should convert the number 4 into Roman Numeral IV", function ()  {
+    it("Should subtract 1 from 5 to convert the number 4 into Roman numeral IV", function ()  {
         expect(toRoman(4)).toEqual('IV');
     });
 
@@ -11,12 +11,20 @@ describe('Roman Numeral Converter', () => {
         expect(toRoman(5)).toEqual('V');
     });
 
-    it("Should convert the number 9 into Roman Numeral IX", function () {
+    it("Should add 1 to 5 to convert the number 6 into Roman Numeral VI", function () {
+        expect(toRoman(6)).toEqual('VI');
+    });
+
+    it("Should subtract 1 from 10 to convert the number 9 into Roman Numeral IX", function () {
         expect(toRoman(9)).toEqual('IX');
     });
 
     it("Should convert the number 10 into Roman Numeral X", function () {
         expect(toRoman(10)).toEqual('X');
+    });
+
+    it("Should add 1 to 10 to convert the number 11 into Roman Numeral XI", function () {
+        expect(toRoman(11)).toEqual('XI');
     });
 
     it("Should convert the number 40 into Roman Numeral XL", function () {
