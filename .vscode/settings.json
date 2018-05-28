@@ -1,0 +1,7 @@
+{
+    "bracketPairColorizer.forceIterationColorCycle": true,
+    "editor.fontFamily": "'Inconsolata', monospace",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "workbench.fontAliasing": "antialiased"
+}

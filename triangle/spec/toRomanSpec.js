@@ -41,6 +41,7 @@ describe('Roman Numeral Converter', () => {
             expect(toRoman(1100)).toEqual('MC');
         });
     });
+    
     it("Should convert the number 1377 into Roman Numeral MCCCXXLVII", function () {
         expect(toRoman(1377)).toEqual('MCCCLXXVII');
 
