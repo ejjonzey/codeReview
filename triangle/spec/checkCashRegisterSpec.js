@@ -119,7 +119,7 @@ describe('Check cash register for change', () => {
     });
 
     describe('Closed, incorrect money in drawer to make change', () => {
-        it('Should return "Closed" when cash in drawer cannot make proper change', () => {
+        it('Should return "Insufficient Funds" when cash in drawer cannot make proper change', () => {
             expect(checkCashRegister(15, 20, [
                 [
                     "PENNY", 0
@@ -146,7 +146,7 @@ describe('Check cash register for change', () => {
                     "TWENTY", 0
                 ],
                 ["ONE HUNDRED", 0]
-            ])).toEqual("Closed")
+            ])).toEqual("Insufficient funds")
         });
     });
 });
