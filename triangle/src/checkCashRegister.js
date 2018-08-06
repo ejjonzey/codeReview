@@ -50,7 +50,7 @@ function checkCashRegister(price, cash, cashInDrawer) {
             register[current.name] -= current.amount;
             amount += current.amount;
 
-            roundAmountLeft();
+            amountLeft = roundAmountLeft(amountLeft);
         }
 
         if (amount > 0) {
@@ -65,11 +65,13 @@ function checkCashRegister(price, cash, cashInDrawer) {
 
     return customerChange;
 
-    function roundAmountLeft() {
-        amountLeft = Math.round(amountLeft * 100) / 100;
-    }
 }
 
+
+function roundAmountLeft(amountLeft) {
+    amountLeft = Math.round(amountLeft * 100) / 100;
+    return amountLeft;
+}
 
 function drawerObject(cashInDrawer) {
     return cashInDrawer.reduce(function (accumulator, current) {

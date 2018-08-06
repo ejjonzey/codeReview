@@ -137,10 +137,10 @@ describe('Check cash register for change', () => {
                     "DIME", 0
                 ],
                 [
-                    "QUARTER", 0
+                    "QUARTER", .25
                 ],
                 [
-                    "ONE", 0
+                    "ONE", 4.00
                 ],
                 [
                     "FIVE", 0
