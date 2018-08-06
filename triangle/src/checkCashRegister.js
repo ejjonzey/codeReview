@@ -73,10 +73,14 @@ function checkCashRegister(price, cash, cashInDrawer) {
 
 function drawerObject(cashInDrawer) {
     return cashInDrawer.reduce(function (accumulator, current) {
-        accumulator.total += current[1];
-        accumulator[current[0]] = current[1];
+        accumulationTotal(accumulator, current);
         return accumulator;
     }, { total: 0 });
+}
+
+function accumulationTotal(accumulator, current) {
+    accumulator.total += current[1];
+    accumulator[current[0]] = current[1];
 }
 
 function changeFromRegister(register, current, amountLeft) {
