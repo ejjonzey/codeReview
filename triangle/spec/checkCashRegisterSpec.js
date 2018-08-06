@@ -27,7 +27,9 @@ describe('Check cash register for change', () => {
                 [
                     "TWENTY", 0
                 ],
-                ["ONE HUNDRED", 0]
+                [   
+                    "ONE HUNDRED", 0
+                ]
             ])).toEqual("Insufficient Funds");
         });
     });
@@ -59,7 +61,9 @@ describe('Check cash register for change', () => {
                 [
                     "TWENTY", 0
                 ],
-                ["ONE HUNDRED", 0]
+                [   
+                    "ONE HUNDRED", 0
+                ]
             ])).toEqual("Closed");
         });
     });
@@ -91,7 +95,9 @@ describe('Check cash register for change', () => {
                 [
                     "TWENTY", 60.00
                 ],
-                ["ONE HUNDRED", 100.00]
+                [   
+                    "ONE HUNDRED", 100.00
+                ]
             ])).toEqual([
                 [
                     "TWENTY", 60.00
@@ -145,7 +151,9 @@ describe('Check cash register for change', () => {
                 [
                     "TWENTY", 0
                 ],
-                ["ONE HUNDRED", 0]
+                [   
+                    "ONE HUNDRED", 0
+                ]
             ])).toEqual("Insufficient funds")
         });
     });

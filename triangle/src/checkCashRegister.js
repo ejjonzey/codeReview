@@ -33,11 +33,7 @@ function checkCashRegister(price, cash, cashInDrawer) {
 
     let amountLeft = cash - price;
 
-    let register = cashInDrawer.reduce(function (accumulator, current) {
-        accumulator.total += current[1];
-        accumulator[current[0]] = current[1];
-        return accumulator;
-    }, {total: 0});
+    let register = drawerObject(cashInDrawer);
 
     if (closedRegister(register, amountLeft)) {
         return 'Closed';
@@ -74,6 +70,14 @@ function checkCashRegister(price, cash, cashInDrawer) {
     }
 }
 
+
+function drawerObject(cashInDrawer) {
+    return cashInDrawer.reduce(function (accumulator, current) {
+        accumulator.total += current[1];
+        accumulator[current[0]] = current[1];
+        return accumulator;
+    }, { total: 0 });
+}
 
 function changeFromRegister(register, current, amountLeft) {
     return register[current.name] > 0 && amountLeft >= current.amount;
