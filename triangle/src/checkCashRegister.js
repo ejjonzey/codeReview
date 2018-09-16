@@ -33,9 +33,9 @@ function checkCashRegister(price, cash, cashInDrawer) {
 
     let amountLeft = cash - price;
 
-    let register = drawerObject(cashInDrawer);
+    let register = changeCashToObject(cashInDrawer);
 
-    if (closedRegister(register, amountLeft)) {
+    if (closeRegister(register, amountLeft)) {
         return 'Closed';
     }
 
@@ -50,7 +50,7 @@ function checkCashRegister(price, cash, cashInDrawer) {
             register[current.name] -= current.amount;
             amount += current.amount;
 
-            amountLeft = roundAmountLeft(amountLeft);
+            amountLeft = Math.round(amountLeft * 100) / 100;
         }
 
         if (amount > 0) {
@@ -59,7 +59,7 @@ function checkCashRegister(price, cash, cashInDrawer) {
         return accumulator;
     }, []);
 
-    if (customerChange.length < 1 || amountLeft > 0) {
+    if (cantGiveChange(customerChange, amountLeft)) {
         return "Insufficient funds"
     }
 
@@ -68,12 +68,11 @@ function checkCashRegister(price, cash, cashInDrawer) {
 }
 
 
-function roundAmountLeft(amountLeft) {
-    amountLeft = Math.round(amountLeft * 100) / 100;
-    return amountLeft;
+function cantGiveChange(customerChange, amountLeft) {
+    return customerChange.length < 1 || amountLeft > 0;
 }
 
-function drawerObject(cashInDrawer) {
+function changeCashToObject(cashInDrawer) {
     return cashInDrawer.reduce(function (accumulator, current) {
         accumulationTotal(accumulator, current);
         return accumulator;
@@ -93,7 +92,7 @@ function insufficientFunds(register, amountLeft) {
     return register.total < amountLeft;
 }
 
-function closedRegister(register, amountLeft) {
+function closeRegister(register, amountLeft) {
     return register.total === amountLeft;
 }
 
